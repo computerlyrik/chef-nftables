@@ -3,3 +3,7 @@
 SingleSpaceBeforeFirstArg:
   Enabled: false
 
+# support line length
+LineLength:
+  Max: 120
+
