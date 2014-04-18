@@ -19,7 +19,7 @@
 
 # include_recipe "apt"
 apt_repository 'nftables-repository' do
-  uri 'ppa:xuzhen666/nftables'
+  uri 'http://ppa.launchpad.net/xuzhen666/nftables/ubuntu'
   distribution node['lsb']['codename']
   components ['main']
   keyserver 'keyserver.ubuntu.com'
