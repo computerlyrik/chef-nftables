@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/computerlyrik/chef-nftables.png?branch=master)](https://travis-ci.org/computerlyrik/chef-nftables)
+
 nftables Cookbook
 =================
 
@@ -67,4 +69,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Christian Fischer 
