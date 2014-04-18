@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'chef'
 gem 'berkshelf'
 
-gem 'dep_selector', :github => 'opscode/dep-selector'
-
 group :test do
   gem "foodcritic"
   gem "rubocop"
