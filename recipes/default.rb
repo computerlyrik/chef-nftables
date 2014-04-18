@@ -17,13 +17,13 @@
 # limitations under the License.
 #
 
-#include_recipe "apt"
-apt_repository "nftables-repository" do
+# include_recipe "apt"
+apt_repository 'nftables-repository' do
   uri 'ppa:xuzhen666/nftables'
   distribution node['lsb']['codename']
-  components ["main"]
-  keyserver "keyserver.ubuntu.com"
-  key "EEAD66BD"
+  components ['main']
+  keyserver 'keyserver.ubuntu.com'
+  key 'EEAD66BD'
 end
 
 package 'nftables' do
