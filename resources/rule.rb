@@ -36,4 +36,3 @@ attribute :dest_port, kind_of: Integer
 attribute :dest_interface, kind_of: String
 attribute :position, kind_of: Integer
 attribute :stateful, kind_of: String
-
