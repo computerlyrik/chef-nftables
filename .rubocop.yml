@@ -1,0 +1,5 @@
+
+# support multiple spaces in metadata.rb
+SingleSpaceBeforeFirstArg:
+  Enabled: false
+
