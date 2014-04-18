@@ -8,7 +8,6 @@ gem 'dep_selector', :github => 'opscode/dep-selector'
 group :test do
   gem "foodcritic"
   gem "rubocop"
-  gem "strainer"
 end
 
 group :integration do
