@@ -2,15 +2,17 @@ source 'https://rubygems.org'
 
 gem 'chef'
 gem 'berkshelf'
-gem "strainer"
+
+gem 'dep_selector', :github => 'opscode/dep-selector'
 
 group :test do
   gem "foodcritic"
   gem "rubocop"
+  gem "strainer"
 end
 
 group :integration do
   gem 'test-kitchen'
-  gem "kitchen-vagrant"
+  gem 'kitchen-vagrant'
 end
 
