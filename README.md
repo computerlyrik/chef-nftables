@@ -9,11 +9,11 @@ Additions will be made on demand.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+This cookbook works on ubuntu 14.04
 
 e.g.
 #### packages
-- `toaster` - nftables needs toaster to brown your bagel.
+- `apt` - nftables needs apt to add ppa repository
 
 Attributes
 ----------
