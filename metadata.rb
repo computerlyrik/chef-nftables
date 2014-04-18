@@ -1,5 +1,5 @@
 name             'nftables'
-maintainer       'computerlyrik'
+maintainer       'Christian Fischer, computerlyrik'
 maintainer_email 'chef-cookbooks@computerlyrik.de'
 license          'Apache 2.0'
 description      'Installs/Configures nftables'

@@ -2,7 +2,7 @@
 # Cookbook Name:: nftables
 # Recipe:: default
 #
-# Copyright 2014, computerlyrik
+# Copyright 2014, Christian Fischer, computerlyrik
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
