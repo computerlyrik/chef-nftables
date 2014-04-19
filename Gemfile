@@ -4,8 +4,9 @@ gem 'chef'
 gem 'berkshelf'
 
 group :test do
-  gem "foodcritic"
+  gem "foodcritic", "~> 3.0.3"
   gem "rubocop"
+  gem 'strainer'
 end
 
 group :integration do
