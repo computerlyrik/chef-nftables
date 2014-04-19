@@ -17,12 +17,24 @@
 # limitations under the License.
 #
 
-action :allow, :accept do
+# UFW Syntax
+action :allow do
   apply_rule('accept')
   new_resource.updated_by_last_action(false)
 end
 
-action :deny, :drop do
+action :deny do
+  apply_rule('drop')
+  new_resource.updated_by_last_action(false)
+end
+
+action :accept do
+  apply_rule('accept')
+  new_resource.updated_by_last_action(false)
+end
+
+# IPtables/NFtables syntax
+action :drop do
   apply_rule('drop')
   new_resource.updated_by_last_action(false)
 end
