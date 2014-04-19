@@ -17,10 +17,10 @@
 # limitations under the License.
 #
 
-default['node']['nftables']['nft'] = '/usr/bin/nft'
+default['nftables']['nft'] = '/usr/bin/nft'
 
 # from https://home.regit.org/2014/01/why-you-will-love-nftables/
-default['node']['nftables']['v6_defaults'] = %w( nd-neighbor-solicit, nd-neighbor-advert, nd-router-advert,
-                                                 destination-unreachable, packet-too-big, param-problem,
-                                                 mld-listener-query, mld-listener-report, mld-listener-reduction,
-                                                 echo-request, echo-reply )
+default['nftables']['v6_defaults'] = %w( nd-neighbor-solicit, nd-neighbor-advert, nd-router-advert,
+                                         destination-unreachable, packet-too-big, param-problem,
+                                         mld-listener-query, mld-listener-report, mld-listener-reduction,
+                                         echo-request, echo-reply )

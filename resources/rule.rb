@@ -21,7 +21,8 @@
 
 IP_CIDR_VALID_REGEX = /\b(?:\d{1,3}\.){3}\d{1,3}\b(\/[0-3]?[0-9])?/
 
-actions :allow, :deny, :reject
+actions :allow, :accept, :deny, :drop, :reject
+default_action :drop
 
 attribute :port, kind_of: Integer
 attribute :ports, kind_of: Array

@@ -17,30 +17,23 @@
 # limitations under the License.
 #
 
-# UFW syntax
-action :allow do
+action :allow, :accept do
   apply_rule('accept')
+  new_resource.updated_by_last_action(false)
 end
 
-action :deny do
+action :deny, :drop do
   apply_rule('drop')
-end
-
-# IPTABLES / NFTABLES syntax
-action :accept do
-  apply_rule('accept')
-end
-action :drop do
-  apply_rule('drop')
+  new_resource.updated_by_last_action(false)
 end
 
 action :reject do
   apply_rule('reject')
+  new_resource.updated_by_last_action(false)
 end
 
 private
 
 def apply_rule(type = nil)
   Chef::Log.error('Not yet implemented')
-  new_resource.updated_by_last_action(false)
 end
