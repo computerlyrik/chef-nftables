@@ -21,19 +21,12 @@
 
 IP_CIDR_VALID_REGEX = /\b(?:\d{1,3}\.){3}\d{1,3}\b(\/[0-3]?[0-9])?/
 
-actions :allow, :accept, :deny, :drop, :reject
-default_action :drop
+actions :add, :delete
+default_action :add
 
-attribute :port, kind_of: Integer
-attribute :ports, kind_of: Array
-attribute :port_range, kind_of: Range
-attribute :protocol, kind_of: Symbol, equal_to: [:udp, :tcp, :icmp]
-attribute :direction, kind_of: Symbol, equal_to: [:in, :out]
-attribute :interface, kind_of: String
+attribute :table, kind_of: Symbol, equal_to: [:ip, :ip6, :arp, :bridge]
+attribute :chain, kind_of: Symbol, equal_to: [:accept, :reject, :drop, :snat, :dnat, :return], required => true
+attribute :matches, kind_of: Array, required: true
+attribute :jump, kind_of: Symbol, equal_to: [:accept, :reject, :drop, :snat, :dnat, :return]
+
 attribute :logging, kind_of: Symbol, equal_to: [:connections, :packets]
-attribute :source, regex: IP_CIDR_VALID_REGEX
-attribute :destination, regex: IP_CIDR_VALID_REGEX
-attribute :dest_port, kind_of: Integer
-attribute :dest_interface, kind_of: String
-attribute :position, kind_of: Integer
-attribute :stateful, kind_of: String

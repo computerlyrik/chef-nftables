@@ -16,36 +16,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include Chef::Mixin::ShellOut
 
+nftables_bin = '/usr/bin/nft'
 # UFW Syntax
-action :allow do
-  apply_rule('accept')
-  new_resource.updated_by_last_action(false)
+action :add do
+  command = nftables_bin + ' add rule ' + options.type + ' ' + options.hook + ' ' +  + 
+  new_resource.updated_by_last_action(call_command(command))
 end
 
-action :deny do
+action :delete do
   apply_rule('drop')
   new_resource.updated_by_last_action(false)
 end
 
-action :accept do
-  apply_rule('accept')
-  new_resource.updated_by_last_action(false)
-end
-
-# IPtables/NFtables syntax
-action :drop do
-  apply_rule('drop')
-  new_resource.updated_by_last_action(false)
-end
-
-action :reject do
+action :insert do
   apply_rule('reject')
   new_resource.updated_by_last_action(false)
 end
 
 private
 
-def apply_rule(type = nil)
+def call_command(command=nil)
+  erg = shell_out!(command)
+  Chef::Log.info(erg)
   Chef::Log.error('Not yet implemented')
 end
