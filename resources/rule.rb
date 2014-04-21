@@ -24,9 +24,9 @@ IP_CIDR_VALID_REGEX = /\b(?:\d{1,3}\.){3}\d{1,3}\b(\/[0-3]?[0-9])?/
 actions :add, :delete
 default_action :add
 
-attribute :table, kind_of: Symbol, equal_to: [:ip, :ip6, :arp, :bridge]
-attribute :chain, kind_of: Symbol, equal_to: [:accept, :reject, :drop, :snat, :dnat, :return], required => true
+attribute :table, kind_of: String, default: 'filter'
+attribute :chain, kind_of: String, required: true
 attribute :matches, kind_of: Array, required: true
-attribute :jump, kind_of: Symbol, equal_to: [:accept, :reject, :drop, :snat, :dnat, :return]
+attribute :jump, kind_of: Symbol, equal_to: [:accept, :reject, :drop, :snat, :dnat, :log, :counter, :return]
 
 attribute :logging, kind_of: Symbol, equal_to: [:connections, :packets]

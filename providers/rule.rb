@@ -21,7 +21,11 @@ include Chef::Mixin::ShellOut
 nftables_bin = '/usr/bin/nft'
 # UFW Syntax
 action :add do
-  command = nftables_bin + ' add rule ' + options.type + ' ' + options.hook + ' ' +  + 
+  command = nftables_bin + ' add rule ' + options.table + ' ' + options.chain + ' '
+  options.match.each do |match, data|
+    command += match + ' ' + data
+  end
+  Chef::Log.info(command)
   new_resource.updated_by_last_action(call_command(command))
 end
 
@@ -37,7 +41,7 @@ end
 
 private
 
-def call_command(command=nil)
+def call_command(command = nil)
   erg = shell_out!(command)
   Chef::Log.info(erg)
   Chef::Log.error('Not yet implemented')

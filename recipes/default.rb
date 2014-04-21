@@ -29,3 +29,9 @@ end
 package 'nftables' do
   action :install
 end
+
+nftables_chain 'input' do
+  type :filter
+  hook :input
+  priority 0
+end
